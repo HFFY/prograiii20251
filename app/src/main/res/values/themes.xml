@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.AppDeClases" parent="Base.Theme.AppDeClases" />
+
+    <style name="Titulos">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/amarillo</item>
+    </style>
 </resources>

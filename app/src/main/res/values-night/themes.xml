@@ -4,4 +4,11 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+
+    <style name="Titulos">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/rojo</item>
+    </style>
 </resources>
