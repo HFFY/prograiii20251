@@ -22,5 +22,7 @@ class MainActivity : AppCompatActivity() {
         val textView: TextView = findViewById(R.id.text_view_ejemplo6)
         val stringReci: String? = intent.getStringExtra(ID_HOLA_MUNDO)
         textView.text = stringReci
+
+        val test = "test"
     }
 }
