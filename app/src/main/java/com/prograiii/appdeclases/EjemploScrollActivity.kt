@@ -8,30 +8,45 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.prograiii.appdeclases.databinding.ActivityEjemploScrollBinding
+import com.prograiii.appdeclases.dataclases.DatosDeProyecto
 
 class EjemploScrollActivity : AppCompatActivity() {
 
     val context: Context = this
 
+    private lateinit var binding: ActivityEjemploScrollBinding
+
     companion object {
         val ID_HOLA_MUNDO = "id_hola_mundo"
+        val ID_DATOS_PROYECTO = "id_datos_proyecto"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_ejemplo_scroll)
+
+        binding= ActivityEjemploScrollBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val button: Button = findViewById(R.id.button_ejemplo_scroll)
-        button.setOnClickListener {
+        val proyectoUno = DatosDeProyecto(
+            nombreGrupo = "Profesor",
+            tipoDeProyecto = "De Clases",
+            numeroDeIntegrantes = 1
+        )
+
+        binding.buttonEjemploScroll.setOnClickListener {
             val intentCambioPantalla: Intent = Intent(context , MainActivity::class.java)
             intentCambioPantalla.apply {
                 putExtra(ID_HOLA_MUNDO,"Hola Mundo Enviado")
+                putExtra(ID_DATOS_PROYECTO, proyectoUno)
             }
             startActivity(intentCambioPantalla)
         }
