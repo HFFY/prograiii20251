@@ -1,0 +1,17 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/text_adapter_ejemplo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:background="@color/azul"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</LinearLayout>
