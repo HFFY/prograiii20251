@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.prograiii.appdeclases.databinding.AdapterEjemploClasesBinding
+import com.prograiii.appdeclases.dataclases.EjemploRecyclerDataClass
 
 class AdapterRecyclerEjemplo:
     RecyclerView.Adapter<AdapterRecyclerEjemplo.EjemploCardViewHolder>() {
 
-    private val dataCards = mutableListOf<String>()
+    private val dataCards = mutableListOf<EjemploRecyclerDataClass>()
     private var context: Context? = null
 
 
@@ -35,15 +36,13 @@ class AdapterRecyclerEjemplo:
     // Donde hacer la logica
     inner class EjemploCardViewHolder(private val binding: AdapterEjemploClasesBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun binding(data: String) {
-            binding.textAdapterEjemplo.text = data
-
-
-
+        fun binding(data: EjemploRecyclerDataClass) {
+            binding.textAdapterEjemplo.text = data.textoUno
+            binding.textAdapterEjemploNumero.text = data.numero.toString()
         }
     }
 
-    fun addDataCards(list: List<String>) {
+    fun addDataCards(list: List<EjemploRecyclerDataClass>) {
         dataCards.clear()
         dataCards.addAll(list)
     }

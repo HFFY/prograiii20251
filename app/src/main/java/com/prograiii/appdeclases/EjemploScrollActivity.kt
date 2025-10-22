@@ -7,10 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.prograiii.appdeclases.adapters.AdapterRecyclerEjemplo
 import com.prograiii.appdeclases.databinding.ActivityEjemploScrollBinding
 import com.prograiii.appdeclases.dataclases.DatosDeProyecto
+import com.prograiii.appdeclases.dataclases.EjemploRecyclerDataClass
 
 class EjemploScrollActivity : AppCompatActivity() {
 
@@ -19,6 +22,7 @@ class EjemploScrollActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEjemploScrollBinding
 
     val adapter by lazy { AdapterRecyclerEjemplo() }
+    val adapterNumeral by lazy { AdapterRecyclerEjemplo() }
 
     companion object {
         val ID_HOLA_MUNDO = "id_hola_mundo"
@@ -54,27 +58,72 @@ class EjemploScrollActivity : AppCompatActivity() {
             startActivity(intentCambioPantalla)
         }
 
-        val mutablelist = mutableListOf<String>()
-        mutablelist.add("AAAAAAAAAAAAAAAA")
-        mutablelist.add("BBBBBBBBBBBBBBBB")
-        mutablelist.add("CCCCCCCCCCCCCCCC")
-        mutablelist.add("DDDDDDDDDDDDDDDD")
-        mutablelist.add("EEEEEEEEEEEEEEEE")
-        mutablelist.add("FFFFFFFFFFFFFFFF")
-        mutablelist.add("GGGGGGGGGGGGGGGG")
-        mutablelist.add("HHHHHHHHHHHHHHHH")
-        mutablelist.add("AAAAAAAAAAAAAAAA")
-        mutablelist.add("BBBBBBBBBBBBBBBB")
-        mutablelist.add("CCCCCCCCCCCCCCCC")
-        mutablelist.add("DDDDDDDDDDDDDDDD")
-        mutablelist.add("EEEEEEEEEEEEEEEE")
-        mutablelist.add("FFFFFFFFFFFFFFFF")
-        mutablelist.add("GGGGGGGGGGGGGGGG")
-        mutablelist.add("HHHHHHHHHHHHHHHH")
+        val mutablelist = mutableListOf<EjemploRecyclerDataClass>()
+
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        mutablelist.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+
+        val nuevaLista = mutableListOf<EjemploRecyclerDataClass>()
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
+        nuevaLista.add(EjemploRecyclerDataClass(
+            "Text Ejemplo",
+            123
+        ))
 
         adapter.addDataCards(mutablelist)
-        binding.recyclerEjemploScroll.layoutManager = LinearLayoutManager(this)
+
+        adapterNumeral.addDataCards(nuevaLista)
+
+        binding.recyclerEjemploScroll.layoutManager = GridLayoutManager(this,2)
         binding.recyclerEjemploScroll.adapter = adapter
+
+        binding.recyclerEjemploScrollDos.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL, false)
+        binding.recyclerEjemploScrollDos.adapter = adapterNumeral
 
     }
 }
