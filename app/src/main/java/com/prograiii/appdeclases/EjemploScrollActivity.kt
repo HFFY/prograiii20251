@@ -14,6 +14,8 @@ import com.prograiii.appdeclases.adapters.AdapterRecyclerEjemplo
 import com.prograiii.appdeclases.databinding.ActivityEjemploScrollBinding
 import com.prograiii.appdeclases.dataclases.DatosDeProyecto
 import com.prograiii.appdeclases.dataclases.EjemploRecyclerDataClass
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 
 class EjemploScrollActivity : AppCompatActivity() {
 
@@ -53,7 +55,7 @@ class EjemploScrollActivity : AppCompatActivity() {
             val intentCambioPantalla: Intent = Intent(context , MainActivity::class.java)
             intentCambioPantalla.apply {
                 putExtra(ID_HOLA_MUNDO,"Hola Mundo Enviado")
-                putExtra(ID_DATOS_PROYECTO, proyectoUno)
+                putExtra(ID_DATOS_PROYECTO, Json.encodeToString(proyectoUno))
             }
             startActivity(intentCambioPantalla)
         }
