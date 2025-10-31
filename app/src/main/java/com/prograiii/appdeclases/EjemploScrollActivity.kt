@@ -127,5 +127,10 @@ class EjemploScrollActivity : AppCompatActivity() {
         binding.recyclerEjemploScrollDos.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL, false)
         binding.recyclerEjemploScrollDos.adapter = adapterNumeral
 
+        binding.buttonEjemploScroll2.setOnClickListener {
+            val intentEjemplos = Intent(context, ViewEjemplosActivity::class.java)
+            startActivity(intentEjemplos)
+        }
+
     }
 }

@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation("androidx.room:room-runtime:2.8.3")
     implementation("androidx.room:room-ktx:2.8.3")
+    implementation("com.github.bumptech.glide:glide:5.0.5")
     ksp("androidx.room:room-compiler:2.8.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     testImplementation(libs.junit)
